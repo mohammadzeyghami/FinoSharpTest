@@ -6,6 +6,7 @@ import { TooltipProvider } from "./components/ui/tooltip";
 import { useState, useEffect } from "react";
 import faMessages from "./locales/faMessages.json";
 import { ThemeProvider } from "./components/molecules/providers/ThemeProvider";
+import WelcomePage from "./modules/welcome/Pages";
 
 type Messages = {
   [locale: string]: {
@@ -53,6 +54,7 @@ const App = () => {
             {/* Add LocaleProvider here */}
             <div>
               <Routes>
+                <Route path="*" element={<WelcomePage />} />
                 <Route path="/:lang/home" element={<HomePage />} />
                 {/* <Route path="/about" element={<About />} /> */}
                 <Route path="*" element={<div>404 Not Found</div>} />
